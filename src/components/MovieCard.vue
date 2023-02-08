@@ -1,20 +1,25 @@
 <script>
+import { store } from '../store';
+
 export default {
+    name: "MovieCard",
+
   data() {
     return {
-      
+      store
     }
-  }
+  },
+
+  props: ["btb" ]
 }
 </script>
 
 <template>
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>{{ btb.title }}</li>
+        <li>{{ btb.original_title }}</li>
+        <li>{{ btb.original_language }}</li>
+        <li>{{ btb.vote_average }}</li>
     </ul>
 </template>
 
