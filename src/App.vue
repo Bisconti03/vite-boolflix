@@ -55,6 +55,8 @@ export default {
   
 
   <MovieCard  v-for="movie in (store.movieList)" :btb="movie" />
+
+  
 </template>
 
 <style lang="scss">
