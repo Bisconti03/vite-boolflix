@@ -3,7 +3,7 @@ import { store } from '../store';
 import Language  from './Language.vue'
 
 export default {
-    name: "MovieCard",
+    name: "SerieCard",
 
   data() {
     return {
@@ -22,7 +22,8 @@ export default {
 
 <template>
 
-   <div class="card"
+   
+<div class="card"
     @mouseover="hover = true"
     @mouseleave="hover = false">
     <img :src="store.imageURL + typ.poster_path" alt="">
@@ -77,24 +78,23 @@ export default {
     </ul>
     </div>
    </div>
-    
 </template>
 
 <style lang="scss" scoped>
 .card {
-  width: 342px;
+    width: 342px;
   height: 513px;
-  position: relative;
+  position: relative; 
   margin-bottom: 30px;
   margin-left: 25px;
-
+  
   
 }
 
 
 
 .data {
-  width: 342px;
+    width: 342px;
   height: 513px;
   position: absolute;
   top: 0;
@@ -103,10 +103,10 @@ export default {
   background: rgba(0, 0, 0, 0.7);
   padding: 5px 10px;
   
+  
   img {
     width: 30px;
   }
-
 
     
   

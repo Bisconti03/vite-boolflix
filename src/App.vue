@@ -1,7 +1,8 @@
 <script>
 import axios from 'axios';
 import { store } from './store';
-import MovieCard from './components/MovieCard.vue'
+import MovieCard from './components/MovieCard.vue';
+import SerieCard from './components/SerieCard.vue'
 
 
 
@@ -16,7 +17,8 @@ export default {
   },
 
   components: {
-    MovieCard
+    MovieCard,
+    SerieCard
   },
 
 
@@ -61,19 +63,80 @@ export default {
 </script>
 
 <template>
-   <input type="text" v-model="this.search" @keyup.enter="getMovies">
-  <button @click="getMovies">Cerca</button>
+
+  <header>
+    <div>
+      <h1>BOOLFLIX</h1>
+    </div>
+    <div>
+      <input type="text" v-model="this.search" @keyup.enter="getMovies">
+      <button @click="getMovies">Search</button>
+    </div>
+    
+  </header>
+   
+  <main>
+    
+    <div class="card-container">
+
+
+      
+      <MovieCard  v-for="movie in (store.movieList)" :typ="movie" />
+      <SerieCard  v-for="serie in (store.serieList)" :typ="serie" />
+
+      
+      
+    </div>
+
   
 
-  <MovieCard  v-for="movie in (store.movieList)" :btb="movie" :type:="'film'"/>
+  </main>
 
-  <MovieCard  v-for="movie in (store.serieList)" :btb="movie" :type:="'serie'"/>
-
+  
   
 </template>
 
 <style lang="scss">
 @import './styles/main';
+@import './styles/partials/reset.scss';
+
+header {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:black ;
+  padding: 30px 20px;
+
+    h1 {
+      color: red;
+    }
+
+    input {
+      width: 250px;
+      height: 25px;
+    }
+
+    button {
+      height: 25px;
+      
+
+    }
+}
+
+main {
+  background-color: grey;
+  height: 90vh;
+  overflow-y: auto;
+
+  .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  
+  padding-top: 30px;
+  
+}
+}
 
 
 </style>
