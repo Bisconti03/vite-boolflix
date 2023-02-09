@@ -15,7 +15,7 @@ export default {
     Language
   },
 
-  props: ["btb" ]
+  props: ["btb", "type" ]
 }
 </script>
 
@@ -23,8 +23,8 @@ export default {
 
    
     <ul>
-        <li>{{ btb.title }}</li>
-        <li>{{ btb.original_title }}</li>
+        <li>{{type === "film" ? btb.title : btb.name}}</li>
+        <li>{{type === "film" ? btb.original_title : btb.original_name }}</li>
         <li>
             <Language :flag="btb.original_language"/>
         </li>

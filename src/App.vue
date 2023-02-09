@@ -33,7 +33,18 @@ export default {
             store.movieList = response.data.results;
 
             console.log(response.data.results)
-          })
+          });
+
+          axios
+          .get(store.URLcompiledList + store.add + this.search)
+
+          .then(response => {
+
+            store.serieList = response.data.results;
+
+            console.log(response.data.results)
+          });
+
 
           this.search = "";
 
@@ -54,7 +65,9 @@ export default {
   <button @click="getMovies">Cerca</button>
   
 
-  <MovieCard  v-for="movie in (store.movieList)" :btb="movie" />
+  <MovieCard  v-for="movie in (store.movieList)" :btb="movie" :type:="'film'"/>
+
+  <MovieCard  v-for="movie in (store.serieList)" :btb="movie" :type:="'serie'"/>
 
   
 </template>
