@@ -46,21 +46,31 @@ export default {
                 <strong>Vote: </strong>
                 <span v-if="Math.ceil((typ.vote_average / 2)) === 1">
                     <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
                 </span>
                 <span v-else-if="Math.ceil((typ.vote_average / 2)) === 2">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
                 </span>
                 <span v-else-if="Math.ceil((typ.vote_average / 2)) === 3">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
                 </span>
                 <span v-else-if="Math.ceil((typ.vote_average / 2)) === 4">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
                 </span>
                 <span v-else>
                     <i class="fa-solid fa-star"></i>
